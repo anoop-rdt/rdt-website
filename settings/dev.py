@@ -9,7 +9,7 @@ DATABASES = {
         'PORT': '5432',
         'NAME': 'rawdatatech',
         'USER': 'postgres',
-        'PASSWORD': 'password',
+        'PASSWORD': 'abcd1234',
         'OPTIONS': {
             # "autocommit": True,
         },
