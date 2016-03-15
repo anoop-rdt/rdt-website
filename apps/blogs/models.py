@@ -4,6 +4,7 @@ from django.db.models import permalink
 from django.db import models
 from django.conf import settings
 
+import re
 
 class Category(models.Model):
     title = models.CharField(max_length=100, db_index=True)
@@ -24,6 +25,12 @@ class Blog(models.Model):
     posted = models.DateTimeField(db_index=True, auto_now_add=True)
     category = models.ManyToManyField(Category)
     image = models.ImageField( upload_to='uploads/dk_editor/images/' )
+
+    @property
+    def strip_body_html(self):
+        text = re.sub("<.*?>", "", self.body)
+        return text
+    
 
     def __unicode__(self):
         return '%s' % self.title

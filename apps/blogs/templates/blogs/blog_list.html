@@ -4,62 +4,59 @@
 {% block header %}
 <header class="whiteheader"></header>
 <header class="indexheader innerheader pdgTB15">
-<div class="maincontainer">
-<div class="row">
-<div class="col-md-3 col-sm-8 col-xs-8 logdiv">
- 
-<a href="{% url 'home' %}" class="fixedlogo"><img src="{% static 'site/images/color_logo.png' %}"></a>
-</div>
-{% include 'header_partial.html' %}
-<div class=" col-sm-4 col-xs-4 mobmenu pull-right mgnTB15">
-<div class="mob_menuclick right">
-<span class="linemenu"></span>
-<span class="linemenu"></span>
-<span class="linemenu"></span>
-</div>
-<div class="mobmneuslide">
-<div class="closemenu"><i class="fa fa-close white_text"></i></div>
-<div class="mobmneuslidemenu"></div>
-</div>
-</div>
-</div>
-</div>
+  <div class="maincontainer">
+    <div class="row">
+      <div class="col-md-3 col-sm-8 col-xs-8 logdiv">
+
+        <a href="{% url 'home' %}" class="fixedlogo"><img src="{% static 'site/images/color_logo.png' %}"></a>
+      </div>
+      {% include 'header_partial.html' %}
+      <div class=" col-sm-4 col-xs-4 mobmenu pull-right mgnTB15">
+        <div class="mob_menuclick right">
+          <span class="linemenu"></span>
+          <span class="linemenu"></span>
+          <span class="linemenu"></span>
+        </div>
+        <div class="mobmneuslide">
+          <div class="closemenu"><i class="fa fa-close white_text"></i></div>
+          <div class="mobmneuslidemenu"></div>
+        </div>
+      </div>
+    </div>
+  </div>
 </header>
 {% endblock %}
 {% block container %}
-	<div class="clearfix"></div>
- 	<div class="innerbanner fullwidth left main_gradient text-center pdgTB60 fontsize35 white_text lato_bold"><span class="lato_light">BLOGS </div>
- 	<section class="coretop fullwidth left">
-  	<div class="maincontainer ">
-  	<div class="row">
-  <div class="fullwidth pdgTB100 left">
-  <div class="col-md-12 col-xs-12 core_right text-center">
-	{% for blog in object_list %}
-        {% if forloop.first %}<div class="row">{% endif %}
-        <div class="col-md-4">
-                 <div class="panel panel-default">
- 		<div class="panel-heading"><a href="{% url 'blogs:blog_detail' blog.slug %}">{{ blog.title }}</a> - {{ blog.posted }}</div>
- 		<br>
-		<div class="image-div list-inner">
-		    <a href="#">
-		         <img src={{ blog.image.url}} height="200" width="200" class="center-block">
-		    </a>
-		</div>
- 		<div class="panel-body">{{blog.body|removetags:"img"|safe|truncatechars:200}}</div>
-	 	 {% for category in blog.category.all %}
-			<a href="#" class="tag">{{category.title}}</a>
-		 {% endfor %}
- 	</div>
-            </div>
-        {% if forloop.counter|divisibleby:3 %}</div><div class="row">{% endif %}
-        {% if forloop.last %}</div>{% endif %}
-    {% endfor %}
-  	</div>
-  	</div>
-  	</div>
-    </div>
+<div class="clearfix"></div>
+<div class="innerbanner fullwidth left main_gradient text-center pdgTB60 fontsize35 white_text lato_bold"><span class="lato_light">BLOGS </div>
+<section class="coretop fullwidth left">
+ <div class="maincontainer ">
+   <div class="row">
+    <div class="fullwidth pdgTB100 left">
+      <div class="col-md-12 col-xs-12 core_right text-center">
+       {% for blog in object_list %}
+       <div class="col-md-4">
+         <div class="panel panel-default">
+           <div class="panel-heading"><a href="{% url 'blogs:blog_detail' blog.slug %}">{{ blog.title }}</a></div>
+           <br>
+           <div class="image-div list-inner">
+            <a href="#">
+             <img src={{ blog.image.url}} height="200" width="200" class="center-block">
+           </a>
+         </div>
+         <div class="panel-body">{{blog.strip_body_html|safe|truncatechars:200}}</div>
+         {% for category in blog.category.all %}
+         <a href="#" class="tag">{{category.title}}</a>
+         {% endfor %}
+       </div>
+     </div>
+     {% endfor %}
+   </div>
+ </div>
+</div>
+</div>
 
-  	</section>
+</section>
 {% endblock %}
 
 
