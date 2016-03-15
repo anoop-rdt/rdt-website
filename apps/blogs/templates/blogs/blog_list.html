@@ -44,7 +44,7 @@
              <img src={{ blog.image.url}} height="200" width="200" class="center-block">
            </a>
          </div>
-         <div class="panel-body">{{blog.strip_body_html|safe|truncatechars:200}}</div>
+         <div class="panel-body">{{blog.strip_body_html}}</div>
          {% for category in blog.category.all %}
          <a href="#" class="tag">{{category.title}}</a>
          {% endfor %}
