@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% load crispy_forms_tags %}
+{% block header %}
+<header class="whiteheader"></header>
+<header class="indexheader innerheader pdgTB15">
+<div class="maincontainer">
+<div class="row">
+<div class="col-md-3 col-sm-8 col-xs-8 logdiv">
+ 
+<a href="{% url 'home' %}" class="fixedlogo"><img src="{% static 'site/images/color_logo.png' %}"></a>
+</div>
+{% include 'header_partial.html' %}
+<div class=" col-sm-4 col-xs-4 mobmenu pull-right mgnTB15">
+<div class="mob_menuclick right">
+<span class="linemenu"></span>
+<span class="linemenu"></span>
+<span class="linemenu"></span>
+</div>
+<div class="mobmneuslide">
+<div class="closemenu"><i class="fa fa-close white_text"></i></div>
+<div class="mobmneuslidemenu"></div>
+</div>
+</div>
+</div>
+</div>
+</header>
+{% endblock %}
+{% block container %}
+	<div class="clearfix"></div>
+ 	<section class="coretop fullwidth left">
+  	<div class="maincontainer">
+	  	<div class="row">
+		  	<div class="fullwidth pdgTB50 left">
+			  <div class="col-md-7 core_right ">
+					<h1>{{ object.title }}</h1>
+					<p>Published: {{ object.posted }}</p>
+					<div id="font-17">
+						<p>{{ object.body|safe }}</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	</section>
+{% endblock %}

@@ -42,9 +42,13 @@ INSTALLED_APPS = (
     'compressor',
     'coverage',
     'model_mommy',
+    'ckeditor',
+    'ckeditor_uploader',
 
     'apps.account',
     'apps.profiles',
+    'apps.blogs',
+    'apps.website',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -121,3 +125,5 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 LOGIN_URL = '/login'
 
 GRAPPELLI_ADMIN_TITLE = APP_NAME 
+
+CKEDITOR_UPLOAD_PATH = 'content/ckeditor/'

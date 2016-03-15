@@ -1,0 +1,184 @@
+{% extends "base.html" %}
+
+{% load staticfiles %}
+{% load crispy_forms_tags %}
+
+{% block header %}
+<header class="whiteheader"></header>
+<header class="indexheader innerheader pdgTB15">
+<div class="maincontainer">
+<div class="row">
+<div class="col-md-3 col-sm-8 col-xs-8 logdiv">
+ 
+<a href="{% url 'home' %}" class="fixedlogo"><img src="{% static 'site/images/color_logo.png' %}"></a>
+</div>
+{% include 'header_partial.html' %}
+<div class=" col-sm-4 col-xs-4 mobmenu pull-right mgnTB15">
+<div class="mob_menuclick right">
+<span class="linemenu"></span>
+<span class="linemenu"></span>
+<span class="linemenu"></span>
+</div>
+<div class="mobmneuslide">
+<div class="closemenu"><i class="fa fa-close white_text"></i></div>
+<div class="mobmneuslidemenu"></div>
+</div>
+</div>
+</div>
+</div>
+</header>
+{% endblock %}
+
+{% block container %}
+	<div class="clearfix"></div>
+ <div class="innerbanner fullwidth left main_gradient text-center pdgTB60 fontsize35 white_text lato_bold"><span class="lato_light">Core</span> Technologies  </div>
+ <section class="coretop fullwidth left">
+  <div class="maincontainer ">
+  <div class="row">
+  <div class="fullwidth pdgTB120 left">
+  <div class="lapwrop left text-left ">
+  <img class="lapimg" src="{% static 'site/images/imac.png' %}" alt="Python/Django">
+  
+  </div>
+  <div class="col-md-7 col-xs-12 core_right pull-right">
+  <h2 class="lato_light gray4 fontsize35 mgnB10">Python / Django</h2>
+  <p class="common_text gray5 lato_light text-left fontsize18 pdgTB10 " >Python is one of the fastest growing scripting languages. It is backed by a large technology community, a thoroughly proven track record & reliable frameworks. This powerful language is widely adopted by the best software engineers & companies in the world.
+</p>
+<p class="common_text gray5 lato_light text-left fontsize18 pdgTB10 " >
+RawData exploits the power of Python and its trusted framework Django to build amazing and challenging applications at both Minimum Viable Product(MVP) level and at fully functioning high speed computing application levels. Python is a very flexible language with a great potential for the future of the internet. 
+
+</p>
+<p class="common_text gray5 lato_light text-left fontsize18 pdgTB10  " >
+<!--<span class="lato_regular">Many companies like </span>--> Many companies like Google, DropBox & Spotify have adopted Python/Django in developing their world dominating applications.  </p>
+  <div class="clearfix"></div>
+  <div class="companylist">
+  <h5 class="lato_bold fontsize18 gray5 pdgTB30">Popular Python/Django adopters</h5>
+  <div class="comwrp"><img src="{% static 'site/images/c_logo.jpg' %}" alt=""></div>
+  </div>
+  </div>
+  </div>
+  </div>
+  </div>
+ 
+ </section>
+  
+  <section class="core_bottom fullwidth left">
+  <div class="maincontainer">
+  <div class="row">
+  <div class="fullwidth corebottomin pdgTB100 left">
+  
+  <h3 class="corebottomhead gray4 text-center lato_light">
+  More Reasons To Adopt Python/Django
+<span class=" fontsize35"> to build your dreams.</span>
+
+</h3>
+<div class="coreboxwrp fullwidth left mgnT90">
+<div class="corebox col-sm-4 col-xs-12 mgnTB20">
+<div class="coreboxin">
+<div class="sprite1 coresprite c_sp1 mgnTB20"> </div>
+
+<h4 class="gray4 coreboxh4 fontsize24 lato_regular">Fast Development </h4>
+<p class="corebtile mgnTB15">From Drawing board to the Market</p>
+<p class="core_p gray5 fontsize14">Effective way to get your product onto the market as fast as possible. Numerous features & multitude of powerful preset functions offer fast & efficient development.
+</p>
+
+</div>
+
+</div>
+<div class="corebox col-sm-4 col-xs-12 mgnTB20">
+<div class="coreboxin">
+<div class="sprite1 coresprite c_sp2 mgnTB20"> </div>
+
+<h4 class="gray4 coreboxh4 fontsize24 lato_regular">Reliable Technology </h4>
+<p class="corebtile mgnTB15">Thoroughly tested for the market</p>
+<p class="core_p gray5 fontsize14">A framework like Django is as reliable as oak. It has been tried and tested by a large Python Community across the globe for more two decades. 
+
+</p>
+
+</div>
+
+</div>
+<div class="corebox col-sm-4 col-xs-12 mgnTB20">
+<div class="coreboxin">
+<div class="sprite1 coresprite c_sp3 mgnTB20"> </div>
+
+<h4 class="gray4 coreboxh4 fontsize24 lato_regular">Fast Growing Technology </h4>
+<p class="corebtile mgnTB15">Large Python community</p>
+<p class="core_p gray5 fontsize14">Python is one of the fastest growing scripting language of our time and it will play an important role in shaping the architecture of business on the internet for years to come. 
+
+</p>
+
+</div>
+
+</div>
+
+<div class="corebox col-sm-4 col-xs-12 mgnTB20">
+<div class="coreboxin">
+<div class="sprite1 coresprite c_sp4 mgnTB20"> </div>
+
+<h4 class="gray4 coreboxh4 fontsize24 lato_regular">Scalability</h4>
+<p class="corebtile mgnTB15">From Startup to IPO & beyond</p>
+<p class="core_p gray5 fontsize14">Python & Django has proven repeatedly through intense server side applications like YouTube, Instagram & DropBox that it will scale from prototype to a multi-billion dollar application without a flinch. 
+
+</p>
+
+</div>
+
+</div>
+<div class="corebox col-sm-4 col-xs-12 mgnTB20">
+<div class="coreboxin">
+<div class="sprite1 coresprite c_sp5 mgnTB20"> </div>
+
+<h4 class="gray4 coreboxh4 fontsize24 lato_regular">Server Side Made Easy </h4>
+<p class="corebtile mgnTB15">Complex algorithms & Massive databases</p>
+<p class="core_p gray5 fontsize14">Python can ease operations at the server side. Database Management, Admin & User Management and software integration can be done easily and efficiently with the powerful Django Framework.
+
+
+</p>
+
+</div>
+
+</div>
+<div class="corebox col-sm-4 col-xs-12 mgnTB20">
+<div class="coreboxin">
+<div class="sprite1 coresprite c_sp6 mgnTB20"> </div>
+
+<h4 class="gray4 coreboxh4 fontsize24 lato_regular">Safe Customers</h4>
+<p class="corebtile mgnTB15">Usernames, passwords & codekeys</p>
+<p class="core_p gray5 fontsize14">Django allows industry standard authentication system to provide privacy and security to your customers without compromising speed or work flow. 
+
+</p>
+
+</div>
+
+</div>
+</div>
+
+
+  </div>
+  </div>
+  </div>
+  </section>
+  
+  <section class="othertec fullwidth left">
+  <div class="maincontainer">
+  
+   
+  <div class="fullwidth othertecin text-center gray4 pdgTB100 left">
+  <h4 class="lato_light fontsize20 mgnB15">We also build applications in </h4>
+
+ <h3 class="lato_light fontsize48 morecoreh4 mgnB60">JavaScript / Nodejs / Angularjs</h3>
+ 
+ <a class="redmorebtn redamorecore lato_bold fontsize20" href="{% url 'javascript' %}">Read More</a>
+
+
+   </div>
+  
+  
+  </div>
+  
+  </section>
+{% endblock %}
+
+{% block scripts %}
+{% endblock %}

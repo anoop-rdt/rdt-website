@@ -1,0 +1,165 @@
+{% extends "base.html" %}
+
+{% load staticfiles %}
+{% load crispy_forms_tags %}
+{% block header %}
+<header class="whiteheader"></header>
+<header class="indexheader innerheader pdgTB15">
+<div class="maincontainer">
+<div class="row">
+<div class="col-md-3 col-sm-8 col-xs-8 logdiv">
+ 
+<a href="{% url 'home' %}" class="fixedlogo"><img src="{% static 'site/images/color_logo.png' %}"></a>
+</div>
+{% include 'header_partial.html' %}
+<div class=" col-sm-4 col-xs-4 mobmenu pull-right mgnTB15">
+<div class="mob_menuclick right">
+<span class="linemenu"></span>
+<span class="linemenu"></span>
+<span class="linemenu"></span>
+</div>
+<div class="mobmneuslide">
+<div class="closemenu"><i class="fa fa-close white_text"></i></div>
+<div class="mobmneuslidemenu"></div>
+</div>
+</div>
+</div>
+</div>
+</header>
+{% endblock %}
+{% block container %}
+	<div class="clearfix"></div>
+ <div class="innerbanner fullwidth left main_gradient text-center pdgTB60 fontsize35 white_text lato_bold"><span class="lato_light">Contact </span> Us </div>
+ <section class="coretop fullwidth left">
+  <div class="maincontainer ">
+  <div class="row">
+  <div class="fullwidth pdgTB100 left">
+  
+  <div class="col-md-12 col-xs-12 core_right text-center">
+  <div class="iconcontact text-center mgnB20"><img src="{% static 'site/images/location.png' %}" alt="Location"></div>
+  <h2 class="lato_light gray4 fontsize30 mgnB10">Rawdata Technologies</h2>
+  <p class="common_text gray5 lato_light text-center fontsize18 pdgTB10 " >2nd Floor, Chakos Chambers<br>
+Bypass Junction, Palarivattom, Cochin-682025,    India
+
+</p>
+
+
+  <div class="clearfix"></div>
+  <div class="center-block contactcenter">
+  <div class="col-xs-12 col-sm-6 text-center text-center">
+   <div class="iconcontact text-center mgnB20"><img src="{% static 'site/images/phone.png' %}" alt="Location"></div>
+    <p class="common_text cc_bb gray5 lato_light text-center fontsize30 pdgTB10 " >+91-8592-8592-74
+
+</p>
+  </div>
+  <div class="col-xs-12 col-sm-6 text-center text-center">
+   <div class="iconcontact text-center mgnB20"><img src="{% static 'site/images/mail.png' %}" alt="Location"></div>
+    <p class="common_text cc_bb gray5 lato_light text-center fontsize30 pdgTB10 " > info@rawdatatech.com 
+
+</p>
+  </div>
+  </div>
+  </div>
+  </div>
+  </div>
+  </div>
+ 
+ </section>
+  
+  
+   
+  
+  
+  <section class="core_bottom fullwidth left">
+  <div class="maincontainer">
+  <div class="row">
+  <div class="fullwidth corebottomin pdgTB60 left">
+  
+  <h3 class="corebottomhead gray4 text-center lato_light">
+
+
+<span class=" fontsize35">  
+Get in touch with us
+</span>
+
+</h3>
+<p class=" fontsize16 text-center mgnT10 gray4">Fill the form below</p>
+<form method="POST" class="post-form" id="contactForm">
+{% csrf_token %}
+<div class="coreboxwrp fullwidth left mgnT30">
+<div class="corebox col-sm-6 col-xs-12 mgnTB20">
+<div class="coreboxin">
+<h4 class="gray4 coreboxh4 contacthead  fontsize18 mgnB10 lato_regular">Name </h4>
+<input class="contactinput fullwidth pdgS10" name='contact_name' id='name' type="text" required>
+
+
+</div>
+
+</div>
+<div class="corebox col-sm-6 col-xs-12 mgnTB20">
+<div class="coreboxin">
+<h4 class="gray4 coreboxh4 contacthead  fontsize18 mgnB10 lato_regular">Email </h4>
+<input class="contactinput fullwidth pdgS10" name='contact_email' id='email' type="email" required>
+
+
+</div>
+
+</div>
+<div class="corebox col-sm-6 col-xs-12 mgnTB20">
+<div class="coreboxin">
+<h4 class="gray4 coreboxh4 contacthead  fontsize18 mgnB10 lato_regular">Phone </h4>
+<input class="contactinput fullwidth pdgS10" name='contact_phone' id='phone' type="number">
+
+
+</div>
+
+</div>
+
+<div class="corebox col-sm-6 col-xs-12 mgnTB20">
+<div class="coreboxin">
+<h4 class="gray4 coreboxh4 contacthead  fontsize18 mgnB10 lato_regular">Subject </h4>
+<input class="contactinput fullwidth pdgS10" name='subject' id='subject' type="text">
+
+
+</div>
+
+</div>
+
+<div class="corebox col-sm-12 col-xs-12 mgnTB20">
+<div class="coreboxin">
+<h4 class="gray4 coreboxh4 contacthead  fontsize18 mgnB10 lato_regular" style="margin-top:-6px;">Message </h4>
+<textarea class="contacttext fullwidth" name='content' id='message' required></textarea>
+</div>
+</div>
+<div class="corebox col-sm-12 text-center col-xs-12 mgnTB20">
+<input class="contactsendbtn main_gradient fontsize20" type="submit">
+ </div>
+</div>
+</form>
+  </div>
+  </div>
+  </div>
+  </section>
+{% endblock %}
+
+{% block scripts %}
+	<script type="text/javascript">
+		var contactForm = $('#contactForm');
+		contactForm.on('submit', function(ev){
+      console.log(contactForm)
+		    ev.preventDefault();
+
+		    $.ajax({
+		        url: "{% url 'customer_contact' %}",
+		        type:   'POST',
+		        data: contactForm.serialize(),
+		        success: function(msg){
+		            console.log(msg)
+		        },
+		        error: function() {
+		            console.log("Bad submit");
+		        }
+		    });
+		});
+</script>
+{% endblock %}

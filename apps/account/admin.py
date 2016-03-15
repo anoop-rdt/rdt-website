@@ -1,8 +1,11 @@
 from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin
 from django.utils.translation import ugettext_lazy as _
+from django import forms
 
-from .models import User
+from ckeditor.widgets import CKEditorWidget
+
+from .models import User, UserLog
 
 
 class AuthUserAdmin(UserAdmin):
@@ -32,5 +35,20 @@ class UserAdminBase(admin.ModelAdmin):
     # list_filter = ('status', )
     exclude = ('user', )
     readonly_fields = ('created', 'modified', )
+
+
+class UserLogAdminForm(forms.ModelForm):
+    text = forms.CharField(widget=CKEditorWidget())
+    
+    class Meta:
+        model = UserLog
+        fields = ('text',)
+
+
+class UserLogAdmin(admin.ModelAdmin):
+    form = UserLogAdminForm
+
+
+admin.site.register(UserLog, UserLogAdmin)
  
 admin.site.register(User, AuthUserAdmin)

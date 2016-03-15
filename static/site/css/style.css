@@ -1,0 +1,161 @@
+/* Default tags and Bootstrap classes */
+
+body {
+	font-family: 'PT Sans Caption', sans-serif;
+	color: #000099;
+	padding: 40px 0;
+}
+
+.lead { padding: 40px 0; }
+
+
+
+/* Grid */
+
+#posts { margin: 30px auto 0; }
+.post {
+	margin: 0 0 50px;
+	text-align: center;
+	width: 100%;
+}
+.post img { padding: 0 15px; width: 100%; }
+
+#grid.container .post img { padding: 0; }
+
+
+/* Medium devices */
+
+@media (min-width: 768px) {
+	#grid > #posts .post { width: 335px; }
+	#grid > #posts .post.cs2 { width: 100%; }
+	.post img { padding: 0; }
+}
+
+
+
+/* Medium devices */
+
+@media (min-width: 992px) {
+	#grid > #posts .post { width: 445px; }
+	#grid > #posts .post.cs2 { width: 100%; }
+}
+
+
+
+/* Large devices */
+
+@media (min-width: 1200px) {
+	#grid > #posts .post { width: 346px; }
+	#grid > #posts .post.cs2 { width: 742px; }
+}
+
+
+
+/* Large devices min-width (1200px) + a .post margin (50px) * 2 (100px) = 1300px */
+/* 1300px gives me the clearance I need to keep the margins of the entire #grid (the
+bleed if you will) the same width as the .post margins posts (50px). Basically I'm
+being really picky about whitespace. If you don't care, no problem, just delete this.
+Can this be done with Masonry options? */
+
+@media (min-width: 1300px) {
+	#grid {
+		left: -50px;
+		padding-left: 50px;
+		padding-right: 50px;
+		position: relative;
+    	}
+	#grid.container {
+		left: auto;
+		padding-left: 15px;
+		padding-right: 15px;
+	}
+}
+
+*, *:before, *:after {box-sizing:  border-box !important;}
+
+
+.row {
+ -moz-column-width: 25em;
+ -webkit-column-width: 25em;
+ -moz-column-gap: .5em;
+ -webkit-column-gap: .5em; 
+  
+}
+
+.panel {
+ display: inline-block;
+ margin:  .5em;
+ padding:  0; 
+ width:98%;
+}
+
+.tags {
+  list-style: none;
+  margin: 0;
+  overflow: hidden; 
+  padding: 0;
+}
+
+.tags li {
+  float: left; 
+}
+
+.tag {
+  background: #eee;
+  border-radius: 3px 0 0 3px;
+  color: #999;
+  display: inline-block;
+  height: 26px;
+  line-height: 26px;
+  padding: 0 20px 0 23px;
+  position: relative;
+  margin: 0 10px 10px 0;
+  text-decoration: none;
+  -webkit-transition: color 0.2s;
+}
+
+.tag::before {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: inset 0 1px rgba(0, 0, 0, 0.25);
+  content: '';
+  height: 6px;
+  left: 10px;
+  position: absolute;
+  width: 6px;
+  top: 10px;
+}
+
+.tag::after {
+  background: #fff;
+  border-bottom: 13px solid transparent;
+  border-left: 10px solid #eee;
+  border-top: 13px solid transparent;
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.tag:hover {
+  background-color: grey;
+  color: white;
+}
+
+.tag:hover::after {
+   border-left-color: grey; 
+}
+
+/* add a little bottom space under the images */
+.thumbnail {
+	margin-bottom:7px;
+}
+.image-div {
+    max-width: 100%;
+    height: auto;
+    }
+
+.list-inner {
+    display: table;
+    margin:12px auto 0;
+}

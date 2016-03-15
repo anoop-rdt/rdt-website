@@ -1,0 +1,227 @@
+{% extends "base.html" %}
+
+{% load staticfiles %}
+{% load crispy_forms_tags %}
+
+{% block header %}
+<header class="whiteheader"></header>
+<header class="indexheader innerheader pdgTB15">
+<div class="maincontainer">
+<div class="row">
+<div class="col-md-3 col-sm-8 col-xs-8 logdiv">
+ 
+<a href="{% url 'home' %}" class="fixedlogo"><img src="{% static 'site/images/color_logo.png' %}"></a>
+</div>
+{% include 'header_partial.html' %}
+<div class=" col-sm-4 col-xs-4 mobmenu pull-right mgnTB15">
+<div class="mob_menuclick right">
+<span class="linemenu"></span>
+<span class="linemenu"></span>
+<span class="linemenu"></span>
+</div>
+<div class="mobmneuslide">
+<div class="closemenu"><i class="fa fa-close white_text"></i></div>
+<div class="mobmneuslidemenu"></div>
+</div>
+</div>
+</div>
+</div>
+</header>
+{% endblock %}
+
+{% block container %}
+	<div class="clearfix"></div>
+ <div class="innerbanner fullwidth left main_gradient text-center pdgTB60 fontsize35 white_text lato_bold"><span class="lato_light">Who We</span> Serve</div>
+ <section class="inerparagrph fullwidth left">
+ <div class="maincontainer">
+ <div class="fullwidth pdgTB40 left">
+ <p class="common_text gray4 lato_light text-center fontsize20 pdgTB40 wow fadeInUp" > Our customers are unique in their requirements and they are often at different stages of their business growth. From the drawing board to opening up the products & services to the world market and continued expansions, we drive our customers to success. Our talented and hard working team & sophisticated operating capabilities allow us to perform at startup speeds.</p>
+ </div>
+ </div>
+ </section>
+  
+  <section class="inermainwrper mgnB60 fullwidth left">
+  <div class="maincontainer">
+  <div class="whoweSwrp fullwidth left">
+  <div class="whowerow vilotbg">
+  
+  
+  <div class="whowecntntclm  col-sm-6 col-xs-12 pull-right">
+    <article class="whowecntntclmin ">
+    <h4 class="wow fadeInDownBig whoweh4 lato_regular white_text fontsize30">Growing Small to
+<span class="whowespan lato_light">Medium Businesses </span>
+</h4>
+<p class="whowecontnt_p lato_light white_text fontsize16 mgnT10">Switching to higher gears</p>
+
+<a class="  redmorebtn proccesbtn whowelink fontsize18" >View Now</a>
+    </article>
+  </div>
+  <div class="whoweclm col_1 vilotbg col-sm-6 col-xs-12 pull-left">
+  <div class="deatilswhowe">
+  <div class="deatilswhowein">
+  <div class=" pdgTB50 ">
+ <p class="white_text fontsize18 lato_regular"> You have proved the value of your business and now you are focusing on growth, let us help you develop and manage the challenging technological changes & bring your aspirations to life. </p>
+ 
+ <ul class="whowul fullwidth left mgnT20 white_text fontsize16">
+ <li class="whoweli fullwidth left mgnB10"> <i class=" fa-arrow-right pdgS05 fa"></i>Scalability - As new challenges arise, we are equipped both in technology and talent to help you cope with demands of your industry.</li>
+ <li class="whoweli fullwidth left mgnB10"> <i class=" fa-arrow-right pdgS05 fa"></i>Versatility - Our customers dwell in wide range of industries and the invaluable experience of our team bring that edge to our products.</li>
+ <!--<li class="whoweli fullwidth left mgnB10"> <i class=" fa-arrow-right pdgS05 fa"></i></li>-->
+ 
+ </ul>
+</div>
+  </div>
+  </div>
+  </div>
+  </div>
+  
+  <!-- RAW ENDS -->
+  <div class="whowerow pinkbg">
+  
+  
+  <div class="whowecntntclm  col-sm-6 col-xs-12 pull-left">
+    <article class="whowecntntclmin ">
+    <h4 class=" wow fadeInDownBig whoweh4 lato_regular white_text fontsize30">Seed-Stage 
+<span class="whowespan lato_light">Startups </span>
+</h4>
+<p class="whowecontnt_p lato_light white_text fontsize16 mgnT10">Drawing board to the Market
+</p>
+
+<a class="redmorebtn proccesbtn whowelink fontsize18" >View Now</a>
+    </article>
+  </div>
+  <div class="whoweclm col_2 vilotbg col-sm-6 col-xs-12 pull-left">
+  <div class="deatilswhowe">
+  <div class="deatilswhowein">
+  <div class=" pdgTB50 ">
+ <p class="white_text fontsize18 lato_regular"> The right technology partner can greatly increase the chances of your success with robust technology at the right cost entrusted in the right hands. We understand the challenges of a startup at every level and we work closely with the team to understand the value and drive your business to success.</p>
+ 
+ <ul class="whowul fullwidth left mgnT20 white_text fontsize16">
+ <li class="whoweli fullwidth left mgnB10"> <i class=" fa-arrow-right pdgS05 fa"></i> Fast Development - Time is crucial to any business but to a startup it's life or death. We deliver our products & services on time at the highest quality.</li>
+ <li class="whoweli fullwidth left mgnB10"> <i class=" fa-arrow-right pdgS05 fa"></i> Minimal Wastage & Efficient Coding - Designing, coding and work flow are meticulously & strategically planned to ensure quality, future expansion plans, controlled costs & all without sacrificing performance. </li>
+ <!--<li class="whoweli fullwidth left mgnB10"> <i class=" fa-arrow-right pdgS05 fa"></i> Lorem ipsum dolor sit amet.</li>-->
+ 
+ </ul>
+</div>
+  </div>
+  </div>
+  </div>
+  </div>
+  <!-- RAW ENDS -->
+  <div class="whowerow vilotbg">
+  
+  
+  <div class="whowecntntclm  col-sm-6 col-xs-12 pull-right">
+    <article class="whowecntntclmin ">
+    <h4 class=" wow fadeInDownBig whoweh4 lato_regular white_text fontsize30">Matching 
+<span class="whowespan lato_light">Technology Seekers
+ </span>
+</h4>
+<p class="whowecontnt_p lato_light white_text fontsize16 mgnT10">Right Mix & Match
+</p>
+
+<a class="redmorebtn proccesbtn whowelink fontsize18" >View Now</a>
+    </article>
+  </div>
+  <div class="whoweclm col_3 vilotbg col-sm-6 col-xs-12 pull-left">
+  <div class="deatilswhowe">
+  <div class="deatilswhowein">
+  <div class=" pdgTB50 ">
+ <p class="white_text fontsize18 lato_regular"> The right technology or the building  block of your product can define its potential and reach. We operate in the most popular and fast growing technologies running the internet business today. If you are seeking out the best technology or if you code like we do and would like our expertise, we are here to help.</p>
+ 
+ <ul class="whowul fullwidth left mgnT20 white_text fontsize16">
+ <li class="whoweli fullwidth left mgnB10"> <i class=" fa-arrow-right pdgS05 fa"></i>Tech Gurus - Our passionate technology team operate at high standards and sophistication. We are aligned to your business value at all times and your requirements are clear and met at all times.  </li>
+ 
+ </ul>
+</div>
+  </div>
+  </div>
+  </div>
+  </div>
+  
+  <!-- RAW ENDS -->
+  <div class="whowerow pinkbg">
+  <div class="whowecntntclm  col-sm-6 col-xs-12 pull-left">
+    <article class="whowecntntclmin ">
+    <h4 class=" wow fadeInDownBig whoweh4 lato_regular white_text fontsize30">Code
+<span class="whowespan lato_light">Salvage </span>
+</h4>
+<p class="whowecontnt_p lato_light white_text fontsize16 mgnT10">Battling Code Pollution
+</p>
+
+<a class="redmorebtn proccesbtn whowelink fontsize18" >View Now</a>
+    </article>
+  </div>
+  <div class="whoweclm col_4 vilotbg col-sm-6 col-xs-12 pull-right">
+  <div class="deatilswhowe">
+  <div class="deatilswhowein">
+  <div class=" pdgTB50 ">
+ <p class="white_text fontsize18 lato_regular">Your existing product, service or a piece of code that is built by another party may be improved and saved by our team. Though this is considered on a case by case basis, our tech gurus have saved businesses from vast unnecessary rebuilding costs. </p>
+ 
+ <ul class="whowul fullwidth left mgnT20 white_text fontsize16">
+
+ 
+ </ul>
+</div>
+  </div>
+  </div>
+  </div>
+  
+  
+  </div>
+  <!-- RAW ENDS -->
+  <div class="whowerow vilotbg">
+  
+  
+  <div class="whowecntntclm  col-sm-6 col-xs-12 pull-right">
+    <article class="whowecntntclmin ">
+    <h4 class=" wow fadeInDownBig whoweh4 lato_regular white_text fontsize30">Cross-Platform
+<span class="whowespan lato_light">Projects </span>
+</h4>
+<p class="whowecontnt_p lato_light white_text fontsize16 mgnT10">Reach across borders</p>
+
+<a class="fadeInUp redmorebtn proccesbtn whowelink fontsize18" >View Now</a>
+    </article>
+  </div>
+  <div class="whoweclm col_5 vilotbg col-sm-6 col-xs-12 pull-left">
+  <div class="deatilswhowe">
+  <div class="deatilswhowein">
+  <div class=" pdgTB50 ">
+ <p class="white_text fontsize18 lato_regular">Mobile application development technologies have improved vastly in the recent years. Now it's possible for a company to launch its app across multiple platforms with reduced costs and development time with the Cross-Platform development tools. </p>
+ 
+ <ul class="whowul fullwidth left mgnT20 white_text fontsize16">
+ <li class="whoweli fullwidth left mgnB10"> <i class=" fa-arrow-right pdgS05 fa"></i>Ionic Framework- RawData has adopted Ionic to develop its cross-platform applications & build state of the art applications at reduced time and cost to the customer. </li>
+
+ 
+ </ul>
+</div>
+  </div>
+  </div>
+  </div>
+  </div>
+  
+  <!-- RAW ENDS -->
+  </div>
+  
+  
+  </div>
+  
+  </section>
+  
+  
+  
+  
+<section class="viewprocces fullwidth left main_gradient">
+<div class="maincontainer">
+<div class="proccesin fullwidth left pdgTB20">
+<div class="pull-left">
+<h4 class="white_text lato_bold fontsize24"><span class="lato_light">View Our</span> Process</h4>
+</div>
+<div class="pull-right"><a href="{% url 'customer-success' %}" class="redmorebtn proccesbtn fontsize18">View Now</a></div>
+</div>
+</div>
+</section>
+{% endblock %}
+
+{% block scripts %}
+	<!-- Inner page only -->
+{% endblock %}
