@@ -24,7 +24,7 @@ class Blog(models.Model):
     body = models.TextField()
     posted = models.DateTimeField(db_index=True, auto_now_add=True)
     category = models.ManyToManyField(Category)
-    image = models.ImageField( upload_to='uploads/dk_editor/images/' )
+    image = models.ImageField( upload_to='uploads' )
 
     @property
     def strip_body_html(self):
