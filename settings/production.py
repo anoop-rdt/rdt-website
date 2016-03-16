@@ -12,9 +12,9 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'HOST': 'localhost',
         'PORT': '5432',
-        'NAME': 'companysite',
+        'NAME': 'rawdatatech',
         'USER': 'postgres',
-        'PASSWORD': 'password',
+        'PASSWORD': 'abcd1234',
         'OPTIONS': {
             # "autocommit": True,
         },
