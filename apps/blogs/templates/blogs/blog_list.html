@@ -41,15 +41,15 @@
            <br>
            <div class="image-div list-inner">
             <a href="#">
-             <img src={{ blog.image.url}} height="200" width="200" class="center-block">
-           </a>
+             <img src={{ blog.image.url}} width="100%" class="center-block">
+            </a>
          </div>
-         <div class="panel-body">{{blog.strip_body_html}}</div>
+         <div class="panel-body" height="20px">{{blog.strip_body_html}}</div>
          {% for category in blog.category.all %}
-         <a href="#" class="tag">{{category.title}}</a>
+           <a href="#" class="tag">{{category.title}}</a>
          {% endfor %}
        </div>
-     </div>
+     </div> 
      {% endfor %}
    </div>
  </div>

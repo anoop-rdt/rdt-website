@@ -12,9 +12,9 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'HOST': 'localhost',
         'PORT': '5432',
-        'NAME': 'rawdatatech',
+        'NAME': 'companysite',
         'USER': 'postgres',
-        'PASSWORD': 'abcd1234',
+        'PASSWORD': 'password',
         'OPTIONS': {
             # "autocommit": True,
         },
@@ -26,7 +26,7 @@ DATABASES = {
 BASE_URL = "http://app.com/"
 
 EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_HOST_USER = 'rdtcontacttree@gmail.com'
-EMAIL_HOST_PASSWORD = 'invincible123#$'
+EMAIL_HOST_USER = 'logging@rawdatatech.com'
+EMAIL_HOST_PASSWORD = 'Abcd123#$'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True

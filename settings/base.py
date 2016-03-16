@@ -127,3 +127,5 @@ LOGIN_URL = '/login'
 GRAPPELLI_ADMIN_TITLE = APP_NAME 
 
 CKEDITOR_UPLOAD_PATH = 'content/ckeditor/'
+
+CONTACT_EMAIL = 'anoop@rawdatatech.com'

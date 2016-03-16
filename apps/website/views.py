@@ -3,14 +3,16 @@ from forms import ContactForm
 from django.template import loader
 from django.conf import settings
 from django.http import HttpResponse
-from html2text import html2text
+from django.template import Context
+from django.template.loader import render_to_string, get_template
+from django.core.mail import EmailMessage
 
 
 class HomePage(generic.TemplateView):
     template_name = "home.html"
 
     def get_context_data(self, **kwargs):
-    	context = super(HomePage, self).get_context_data(**kwargs)
+        context = super(HomePage, self).get_context_data(**kwargs)
         context['home_page'] = True
         return context
 
@@ -46,22 +48,18 @@ class WhoweServePage(generic.TemplateView):
 
 
 def customer_contact(request):
-	contact_form = ContactForm(request.POST)
-	if contact_form.is_valid():
-		context = {}
-		context['contact_name']=contact_form.cleaned_data['contact_name'],
-		context['contact_email']=contact_form.cleaned_data['contact_email'],
-		context['contact_phone']=contact_form.cleaned_data['contact_phone'],
-		context['subject']=contact_form.cleaned_data['subject'],
-		context['content']=contact_form.cleaned_data['content']
-		body = loader.render_to_string('contact_email.html', context).strip()
-		html_message = contact_form.cleaned_data['content']
-	   	message = html2text(html_message)
-	   	try:
-			send_mail(contact_form.cleaned_data['subject'], message, contact_form.cleaned_data['contact_email'] ,settings.FROM_DEFAULT_EMAIL, html_message=html_message)
-	   	except Exception, e:
-	   		print e
-		response = HttpResponse(status=200)
-	else:
-		response = HttpResponse(status=400)
-		return response
+    contact_form = ContactForm(request.POST)
+    if contact_form.is_valid():
+        c = Context({'contact_name': contact_form.cleaned_data['contact_name'],
+                    'contact_email': contact_form.cleaned_data['contact_email'],
+                    'contact_phone': contact_form.cleaned_data['contact_phone'],
+                    'content' : contact_form.cleaned_data['content']
+            })
+        message = get_template('contact_email.html').render(c)
+        msg = EmailMessage(contact_form.cleaned_data['subject'], message, to=[settings.CONTACT_EMAIL], from_email=contact_form.cleaned_data['contact_email'])
+        msg.content_subtype = 'html'
+        msg.send()
+        response = HttpResponse("Thank you for contacting us.We will get back to you at the earliest.")
+    else:
+        response = HttpResponse("Some error occured.")
+        return response

@@ -1,0 +1,4 @@
+Message from {{contact_name}}
+Email : {{contact_email}}
+Phone : {{contact_phone}}
+{{content}}
