@@ -1,0 +1,21 @@
+{% load endless %}
+{% paginate blogs %}
+{% for blog in blogs %}
+       <div class="col-md-4">
+         <div class="panel-custom panel-default-custom">
+           <div class="panel-heading">
+            <a href="{% url 'blogs:blog_detail' blog.slug %}">{{ blog.title }}</a>
+            </div>
+           <div class="image-div list-inner">
+            <a href="#">
+             <img src={{ blog.image.url}} width="100%" class="center-block-custom">
+            </a>
+         </div>
+         <div class="panel-body" height="20px">{{blog.body|safe|striptags|truncatechars:100}}</div>
+         {% for category in blog.category.all %}
+           <a href="#" class="tag">{{category.title}}</a>
+         {% endfor %}
+       </div>
+     </div> 
+     {% endfor %}
+{% show_more %}
