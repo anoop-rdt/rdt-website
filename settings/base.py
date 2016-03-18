@@ -44,6 +44,7 @@ INSTALLED_APPS = (
     'model_mommy',
     'ckeditor',
     'ckeditor_uploader',
+    'endless_pagination',
 
     'apps.account',
     'apps.profiles',

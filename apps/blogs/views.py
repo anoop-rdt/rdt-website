@@ -8,15 +8,16 @@ from models import Blog
 from django.conf.urls import patterns
 from django.contrib import admin
 from django.http import HttpResponse
+from endless_pagination.views import AjaxListView    
 
 
-class BlogListView(ListView):
+class BlogListView(AjaxListView):
 
     model = Blog
-
-    def get_context_data(self, **kwargs):
-        context = super(BlogListView, self).get_context_data(**kwargs)
-        return context
+    
+    context_object_name = 'blogs'
+    page_template = 'blog_listing_template.html'
+    paginate_by = 3
 
 
 class BlogDetailView(DetailView):

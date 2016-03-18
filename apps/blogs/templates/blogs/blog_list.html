@@ -34,24 +34,11 @@
    <div class="row">
     <div class="fullwidth pdgTB100 left">
       <div class="col-md-12 col-xs-12 core_right text-center">
-       {% for blog in object_list %}
-       <div class="col-md-4">
-         <div class="panel panel-default">
-           <div class="panel-heading"><a href="{% url 'blogs:blog_detail' blog.slug %}">{{ blog.title }}</a></div>
-           <br>
-           <div class="image-div list-inner">
-            <a href="#">
-             <img src={{ blog.image.url}} width="100%" class="center-block">
-            </a>
-         </div>
-         <div class="panel-body" height="20px">{{blog.strip_body_html}}</div>
-         {% for category in blog.category.all %}
-           <a href="#" class="tag">{{category.title}}</a>
-         {% endfor %}
-       </div>
-     </div> 
-     {% endfor %}
+       
+      {% include page_template %}
+
    </div>
+
  </div>
 </div>
 </div>

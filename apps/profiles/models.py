@@ -82,3 +82,12 @@ class BaseProfile(models.Model):
 
 class Profile(Profile1, Profile2, BaseProfile):
     pass
+
+
+class Client(models.Model):
+    title = models.CharField(max_length=100, unique=True)
+    description = models.TextField()
+    image = models.ImageField( upload_to='uploads/clients' )
+
+    def __unicode__(self):
+        return '%s' % self.title

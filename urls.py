@@ -23,6 +23,7 @@ urlpatterns = patterns('',
     url(r'^cross-platform/$', CrossPlatformPage.as_view(), name='cross-platform'),
     url(r'^whoweserve/$', WhoweServePage.as_view(), name='whoweserve'),
     url(r'^customer-success/$', CustomerSuccessPage.as_view(), name='customer-success'),
+    url(r'^clients/$', ClientsPage.as_view(), name='clients'),
     url(r'^users/', include('apps.profiles.urls', namespace='profiles')),
     url(r'^blogs/', include('apps.blogs.urls', namespace='blogs')),
     url(r'^customer_contact/', customer_contact, name='customer_contact'),
@@ -31,4 +32,3 @@ urlpatterns = patterns('',
 urlpatterns += patterns('',
           (r'^static/(?P<path>.*)$', 'django.views.static.serve', {
           'document_root': settings.STATIC_ROOT}))
-

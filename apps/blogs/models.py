@@ -29,7 +29,7 @@ class Blog(models.Model):
     @property
     def strip_body_html(self):
         text = re.sub("<.*?>", "", self.body)
-        return text[:200]
+        return text[:200] + '...'
     
 
     def __unicode__(self):

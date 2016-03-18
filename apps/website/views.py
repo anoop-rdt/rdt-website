@@ -6,6 +6,7 @@ from django.http import HttpResponse
 from django.template import Context
 from django.template.loader import render_to_string, get_template
 from django.core.mail import EmailMessage
+from apps.profiles.models import Client
 
 
 class HomePage(generic.TemplateView):
@@ -13,7 +14,7 @@ class HomePage(generic.TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super(HomePage, self).get_context_data(**kwargs)
-        context['home_page'] = True
+        context['clients'] = Client.objects.all()
         return context
 
 
@@ -45,6 +46,16 @@ class CustomerSuccessPage(generic.TemplateView):
 
 class WhoweServePage(generic.TemplateView):
     template_name = "whoweserve.html"
+
+
+class ClientsPage(generic.TemplateView):
+    template_name = "clients.html"
+
+    def get_context_data(self, **kwargs):
+        context = super(ClientsPage, self).get_context_data(**kwargs)
+        clients = Client.objects.all()
+        context["clients"] = clients
+        return context
 
 
 def customer_contact(request):
