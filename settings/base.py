@@ -28,6 +28,7 @@ ALLOWED_HOSTS = ['*']
 INSTALLED_APPS = (
     'grappelli',
     'django.contrib.admin',
+    'django.contrib.sites',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
@@ -45,6 +46,7 @@ INSTALLED_APPS = (
     'ckeditor',
     'ckeditor_uploader',
     'endless_pagination',
+    'disqus',
 
     'apps.account',
     'apps.profiles',
@@ -125,8 +127,17 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 LOGIN_URL = '/login'
 
-GRAPPELLI_ADMIN_TITLE = APP_NAME 
+GRAPPELLI_ADMIN_TITLE = 'RAWDATA'
 
 CKEDITOR_UPLOAD_PATH = 'content/ckeditor/'
 
-CONTACT_EMAIL = 'anoop@rawdatatech.com'
+CONTACT_EMAIL = 'chacko@rawdatatech.com'
+
+SITE_ID = 1
+
+DISQUS_API_KEY = 'QT3DmFEmSb1CGDhgPLZnzcTsjfOQ5MbMz3B9e9UIPlsik4QtcfElEDsKaRopZl7z'
+DISQUS_WEBSITE_SHORTNAME = 'rawdatatech'
+
+ADDTHIS_SETTINGS = {
+    'PUB_ID': "ra-56ed0750879d2b75",
+}

@@ -1,10 +1,10 @@
 {% load endless %}
 {% paginate blogs %}
 {% for blog in blogs %}
-       <div class="col-md-4">
+       <div class="col-md-4" onclick="location.href='{% url 'blogs:blog_detail' blog.slug %}';" style="cursor: pointer;">
          <div class="panel-custom panel-default-custom">
            <div class="panel-heading">
-            <a href="{% url 'blogs:blog_detail' blog.slug %}">{{ blog.title }}</a>
+            {{ blog.title }}
             </div>
            <div class="image-div list-inner">
             <a href="#">

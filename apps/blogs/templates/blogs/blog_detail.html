@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 {% load staticfiles %}
 {% load crispy_forms_tags %}
+{% load disqus_tags %}
 {% block header %}
 <header class="whiteheader"></header>
 <header class="indexheader innerheader pdgTB15">
@@ -35,6 +36,9 @@
 			  <div class="col-md-7 core_right ">
 					<h1>{{ object.title }}</h1>
 					<p>Published: {{ object.posted }}</p>
+					<br>
+					<div class="addthis_sharing_toolbox"></div>
+					<br>
 					<div id="font-17">
 						<p>{{ object.body|safe }}</p>
 					</div>
@@ -43,4 +47,10 @@
 		</div>
 	</div>
 	</section>
+{% disqus_show_comments "rawdatatech" %}
+<!-- Go to www.addthis.com/dashboard to customize your tools -->
 {% endblock %}
+{% block scripts %}
+	<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-56ed11bfde834595"></script>
+{% endblock scripts %}
+

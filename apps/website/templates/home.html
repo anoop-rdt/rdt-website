@@ -147,7 +147,7 @@ Rawdata continues to challenge its potential and undertake complex projects. Our
 </div>
 </div>
 </section>
-<!-- <div class="clearfix"></div>
+<div class="clearfix"></div>
 <section class="core_techwrp logbg fullwidth left">
 <div class="maincontainer">
 <div class="midlearticle  fullwidth left">
@@ -174,7 +174,7 @@ Our
 </div>
 </div>
 </div>
-</section> -->
+</section>
 <!-- Technologey & Relationship At Core ends -->
 
 
@@ -329,24 +329,24 @@ $(document).ready(function(e) {
   
 });
 
-// $('#myCarousel').carousel({
-//   interval: 10000
-// })
+$('#myCarousel').carousel({
+  interval: 10000
+})
 
-// $('.carousel .item').each(function(){
-//   var next = $(this).next();
-//   if (!next.length) {
-//     next = $(this).siblings(':first');
-//   }
-//   next.children(':first-child').clone().appendTo($(this));
+$('.carousel .item').each(function(){
+  var next = $(this).next();
+  if (!next.length) {
+    next = $(this).siblings(':first');
+  }
+  next.children(':first-child').clone().appendTo($(this));
   
-//   if (next.next().length>0) {
-//     next.next().children(':first-child').clone().appendTo($(this));
-//   }
-//   else {
-//     $(this).siblings(':first').children(':first-child').clone().appendTo($(this));
-//   }
-// });
+  if (next.next().length>0) {
+    next.next().children(':first-child').clone().appendTo($(this));
+  }
+  else {
+    $(this).siblings(':first').children(':first-child').clone().appendTo($(this));
+  }
+});
 </script>
 <script type="text/javascript" src="{% static 'site/js/wow.min.js' %}"></script>
 <script type="text/javascript">

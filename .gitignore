@@ -15,4 +15,5 @@ staticfiles/
 *.iml
 *~
 media/
-
+settings/dev.py
+settings/production.py
