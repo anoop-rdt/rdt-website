@@ -26,4 +26,5 @@ class BlogDetailView(DetailView):
 
     def get_context_data(self, **kwargs):
         context = super(BlogDetailView, self).get_context_data(**kwargs)
+        context['related_blogs'] = Blog.objects.filter(category__in=self.object.category.all())[:6]
         return context

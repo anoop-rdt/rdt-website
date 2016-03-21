@@ -1,9 +1,10 @@
 {% load endless %}
 {% paginate blogs %}
 {% for blog in blogs %}
-       <div class="col-md-4" onclick="location.href='{% url 'blogs:blog_detail' blog.slug %}';" style="cursor: pointer;">
+       <div class="col-md-4">
+       <a class='div-click' href="{% url 'blogs:blog_detail' blog.slug %}" class="tag">{{category.title}}</a>
          <div class="panel-custom panel-default-custom">
-           <div class="panel-heading">
+           <div class="panel-heading-custom font-17">
             {{ blog.title }}
             </div>
            <div class="image-div list-inner">
@@ -11,7 +12,7 @@
              <img src={{ blog.image.url}} width="100%" class="center-block-custom">
             </a>
          </div>
-         <div class="panel-body" height="20px">{{blog.body|safe|striptags|truncatechars:100}}</div>
+         <div class="panel-body-custom">{{blog.body|safe|striptags|truncatechars:100}}</div>
          {% for category in blog.category.all %}
            <a href="#" class="tag">{{category.title}}</a>
          {% endfor %}
@@ -19,3 +20,14 @@
      </div> 
      {% endfor %}
 {% show_more %}
+{% block scripts %}
+  <script type="text/javascript">
+    $(document).ready(function() {
+    $(".col-md-4").click(function(){
+         window.location=$(this).find('.div-click').attr("href");
+         return false;
+    });
+});
+  </script>
+{% endblock scripts %}
+

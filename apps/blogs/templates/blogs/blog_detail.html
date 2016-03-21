@@ -2,6 +2,15 @@
 {% load staticfiles %}
 {% load crispy_forms_tags %}
 {% load disqus_tags %}
+{% block meta_container %}
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="{{ object.body|safe }}">
+  <meta name="author" content="Anoop John">
+  <title>{{ object.title }}</title>
+{% endblock meta_container %}
 {% block header %}
 <header class="whiteheader"></header>
 <header class="indexheader innerheader pdgTB15">
@@ -31,18 +40,30 @@
 	<div class="clearfix"></div>
  	<section class="coretop fullwidth left">
   	<div class="maincontainer">
+  		<div class="row">
+  		  <div class="col-lg-12">
+			<h1>{{ object.title }}</h1>
+			<div class="text-muted">Published: {{ object.posted }}</div>
+			<div class="addthis_sharing_toolbox"></div>
+  		  </div>
+  		</div>
 	  	<div class="row">
-		  	<div class="fullwidth pdgTB50 left">
-			  <div class="col-md-7 core_right ">
-					<h1>{{ object.title }}</h1>
-					<p>Published: {{ object.posted }}</p>
-					<br>
-					<div class="addthis_sharing_toolbox"></div>
-					<br>
-					<div id="font-17">
-						<p>{{ object.body|safe }}</p>
+			  <div class="col-lg-7 core_right ">
+		  		<div class="fullwidth pdgTB50 left">
+					<div class="font-17 justify blog-text">
+						{{ object.body|safe }}
 					</div>
 				</div>
+			  </div>
+			<div class="col-lg-5">
+				<h1>Related Blogs</h1>
+			</div>
+			<div class="col-lg-5 ">
+			  <ul class="list-group">
+			  {% for blog in related_blogs %}
+				<li class="list-group-item"><a href="{% url 'blogs:blog_detail' blog.slug %}">{{blog.title}}</a></li>
+			  {% endfor %}
+			  </ul>
 			</div>
 		</div>
 	</div>
@@ -51,6 +72,7 @@
 <!-- Go to www.addthis.com/dashboard to customize your tools -->
 {% endblock %}
 {% block scripts %}
-	<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-56ed11bfde834595"></script>
+	<!-- Go to www.addthis.com/dashboard to customize your tools -->
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-56ed0750879d2b75"></script>
 {% endblock scripts %}
 

@@ -2,6 +2,15 @@
 
 {% load staticfiles %}
 {% load crispy_forms_tags %}
+{% block meta_container %}
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="{% block description %}{% endblock description %}">
+  <meta name="author" content="Anoop John">
+  <title>.:RawData Technologies:.</title>
+{% endblock meta_container %}
 {% block header %}
   <section class="mainindex">
   <header class="whiteheader"></header>
@@ -148,7 +157,7 @@ Rawdata continues to challenge its potential and undertake complex projects. Our
 </div>
 </section>
 <div class="clearfix"></div>
-<section class="core_techwrp logbg fullwidth left">
+<section class="core_techwrp logbg fullwidth left height_set">
 <div class="maincontainer">
 <div class="midlearticle  fullwidth left">
 <br/>
@@ -158,20 +167,24 @@ Our
 <span class="lato_light comhedspanmidle">Clients</span>
 </h3>
 <br/>
-<br/>
-<div class="center-block">
-<div class="carousel slide" id="myCarousel">
-  <div class="carousel-inner">
-  {% for client in clients %}
-    <div class="item {% if forloop.first %} active {%endif %}">
-      <div class="col-md-4"><a href="#"><img src="{{client.image.url}}" class="carousel-img-responsive"></a></div>
+<div class="container">
+    <div class="col-md-12">
+        <div class="carousel slide" id="myCarousel">
+          <div class="carousel-inner">
+                {% for client in clients %}
+                  <div class="item {% if forloop.first %} active {%endif %}">
+                    <div class="col-lg-4 col-xs-4 col-md-4 col-sm-4"><a href="#"><img src="{{client.image.url}}" class="carousel-img-responsive"></a></div>
+                  </div>
+                {% endfor %}
+          </div>
+          <a class="left carousel-control" href="#myCarousel" data-slide="prev"><i class="glyphicon glyphicon-chevron-left"></i></a>
+          <a class="right carousel-control" href="#myCarousel" data-slide="next"><i class="glyphicon glyphicon-chevron-right"></i></a>
+        </div>
     </div>
-  {% endfor %}
-  </div>
-  <a class="left carousel-control" href="#myCarousel" data-slide="prev"><i class="glyphicon glyphicon-chevron-left"></i></a>
-  <a class="right carousel-control" href="#myCarousel" data-slide="next"><i class="glyphicon glyphicon-chevron-right"></i></a>
 </div>
-</div>
+
+
+
 </div>
 </div>
 </section>
@@ -330,8 +343,8 @@ $(document).ready(function(e) {
 });
 
 $('#myCarousel').carousel({
-  interval: 10000
-})
+  interval: 40000
+});
 
 $('.carousel .item').each(function(){
   var next = $(this).next();
@@ -339,12 +352,15 @@ $('.carousel .item').each(function(){
     next = $(this).siblings(':first');
   }
   next.children(':first-child').clone().appendTo($(this));
-  
+
   if (next.next().length>0) {
-    next.next().children(':first-child').clone().appendTo($(this));
+ 
+      next.next().children(':first-child').clone().appendTo($(this)).addClass('rightest');
+      
   }
   else {
-    $(this).siblings(':first').children(':first-child').clone().appendTo($(this));
+      $(this).siblings(':first').children(':first-child').clone().appendTo($(this));
+     
   }
 });
 </script>

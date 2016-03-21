@@ -108,7 +108,7 @@ Get in touch with us
 <div class="corebox col-sm-6 col-xs-12 mgnTB20">
 <div class="coreboxin">
 <h4 class="gray4 coreboxh4 contacthead  fontsize18 mgnB10 lato_regular">Phone </h4>
-<input class="contactinput fullwidth pdgS10" name='contact_phone' id='phone' type="number">
+<input class="contactinput fullwidth pdgS10" name='contact_phone' id='phone' type="tel">
 
 
 </div>
@@ -132,7 +132,13 @@ Get in touch with us
 </div>
 </div>
 <div class="corebox col-sm-12 text-center col-xs-12 mgnTB20">
-<input class="contactsendbtn main_gradient fontsize20" type="submit">
+<button class="contactsendbtn main_gradient fontsize20" id="contact-submit" type="submit">Submit</button>`
+<div id="success-msg" style="display: none;">
+  <span>Thank you.We will get back to you at the earliest.</span>
+</div>
+<div id="err-msg"  style="display: none;">
+  <span>Some error occured. Please try again later.</span>
+  </div>
  </div>
 </div>
 </form>
@@ -154,10 +160,11 @@ Get in touch with us
 		        type:   'POST',
 		        data: contactForm.serialize(),
 		        success: function(msg){
-		            console.log(msg)
+		            $('#contact-submit').hide();
+                $('#success-msg').show();
 		        },
 		        error: function() {
-		            console.log("Bad submit");
+		            $('#err-msg').show();
 		        }
 		    });
 		});

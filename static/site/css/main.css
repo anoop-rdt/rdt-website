@@ -1051,7 +1051,7 @@ a.redamorecore:hover{
 .tag:hover::after {
    border-left-color: grey; 
 }
-#font-17 p {
+.font-17 p {
  font-size: 17px; 
 }
 .panel-custom-default {
@@ -1067,6 +1067,22 @@ a.redamorecore:hover{
     border-radius: 1px;
     box-shadow: 2px 2px 3px 0px rgba(0,0,0,.2);
 }
+.panel-body-custom{
+	    padding: 15px;
+    font-size: 15px;
+    height: 100px;
+    color: #555;
+}
+.panel-heading-custom {
+    padding: 10px 15px;
+    border-bottom: 1px solid transparent;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    font-size: 18px;
+    text-align: left;
+    height: 59px;
+    color: #003236;
+}
 .center-block-custom {
 	display: block;
 	margin-right: auto;
@@ -1079,6 +1095,21 @@ a.redamorecore:hover{
 .carousel-control.left,.carousel-control.right {background-image:none;}
 .carousel-img-responsive, .thumbnail a>img, .thumbnail>img {
     display: block;
-    max-width: 50%;
-    height: auto;
+    height: 240px;
+}
+.item:not(.prev) {visibility: visible;}
+.item.right:not(.prev) {visibility: hidden;}
+.rightest{ visibility: visible;}
+.col-md-4:hover { cursor: pointer; }
+.justify { text-align: justify; }
+.blog-text {line-height: 24px; font-size: 15px; color: #555;}
+.blog-text p {margin-bottom: 17px;}
+.height_set{height: 375px;}
+#success-msg span{
+	color: #7CFC00;
+	font-size: 16px;
+}
+#err-msg span{
+	color: #FF0000;
+	font-size: 16px;
 }

@@ -7,6 +7,7 @@ from django.template import Context
 from django.template.loader import render_to_string, get_template
 from django.core.mail import EmailMessage
 from apps.profiles.models import Client
+from django.http import JsonResponse
 
 
 class HomePage(generic.TemplateView):
@@ -69,8 +70,10 @@ def customer_contact(request):
         message = get_template('contact_email.html').render(c)
         msg = EmailMessage(contact_form.cleaned_data['subject'], message, to=[settings.CONTACT_EMAIL], from_email=contact_form.cleaned_data['contact_email'])
         msg.content_subtype = 'html'
-        msg.send()
-        response = HttpResponse("Thank you for contacting us.We will get back to you at the earliest.")
+        try:
+            msg.send()
+        except Exception,e:
+            print e
+        return JsonResponse({"status":"Success"})
     else:
-        response = HttpResponse("Some error occured.")
-        return response
+        return JsonResponse(form.errors)
