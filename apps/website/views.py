@@ -61,19 +61,13 @@ class ClientsPage(generic.TemplateView):
 
 def customer_contact(request):
     contact_form = ContactForm(request.POST)
-    if contact_form.is_valid():
-        c = Context({'contact_name': contact_form.cleaned_data['contact_name'],
-                    'contact_email': contact_form.cleaned_data['contact_email'],
-                    'contact_phone': contact_form.cleaned_data['contact_phone'],
-                    'content' : contact_form.cleaned_data['content']
-            })
-        message = get_template('contact_email.html').render(c)
-        msg = EmailMessage(contact_form.cleaned_data['subject'], message, to=[settings.CONTACT_EMAIL], from_email=contact_form.cleaned_data['contact_email'])
-        msg.content_subtype = 'html'
-        try:
-            msg.send()
-        except Exception,e:
-            print e
-        return JsonResponse({"status":"Success"})
-    else:
-        return JsonResponse(form.errors)
+    c = Context({'contact_name': contact_form.data['contact_name'],
+                'contact_email': contact_form.data['contact_email'],
+                'contact_phone': contact_form.data['contact_phone'],
+                'content' : contact_form.data['content']
+        })
+    message = get_template('contact_email.html').render(c)
+    msg = EmailMessage(contact_form.data['subject'], message, to=[settings.CONTACT_EMAIL], from_email=contact_form.data['contact_email'])
+    msg.content_subtype = 'html'
+    msg.send()
+    return JsonResponse({"status":"Success"})

@@ -38,24 +38,25 @@
 {% endblock %}
 {% block container %}
 	<div class="clearfix"></div>
- 	<section class="coretop fullwidth left">
+	<div class=" pdgTB15"></div>
   	<div class="maincontainer">
   		<div class="row">
-  		  <div class="col-lg-12">
-			<h1>{{ object.title }}</h1>
-			<div class="text-muted">Published: {{ object.posted }}</div>
-			<div class="addthis_sharing_toolbox"></div>
+  		  <div class="col-md-7 col-md-offset-3">
+			<h4><a href="{% url 'blogs:blog_list' %}">< Back to blogs</a></li></h4>
+			<h2>{{ object.title }}</h2>
+			<br>
+			<div class="text-muted">{{ object.posted|date:"M d, Y" }}</div>
   		  </div>
   		</div>
 	  	<div class="row">
-			  <div class="col-lg-7 core_right ">
+			  <div class="col-md-6 col-md-offset-3">
 		  		<div class="fullwidth pdgTB50 left">
 					<div class="font-17 justify blog-text">
 						{{ object.body|safe }}
 					</div>
 				</div>
 			  </div>
-			<div class="col-lg-5">
+			<!-- <div class="col-lg-5">
 				<h1>Related Blogs</h1>
 			</div>
 			<div class="col-lg-5 ">
@@ -64,10 +65,9 @@
 				<li class="list-group-item"><a href="{% url 'blogs:blog_detail' blog.slug %}">{{blog.title}}</a></li>
 			  {% endfor %}
 			  </ul>
-			</div>
+			</div> -->
 		</div>
 	</div>
-	</section>
 {% disqus_show_comments "rawdatatech" %}
 <!-- Go to www.addthis.com/dashboard to customize your tools -->
 {% endblock %}
