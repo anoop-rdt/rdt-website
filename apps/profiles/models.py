@@ -25,7 +25,7 @@ class Profile1(models.Model):
 
 class Profile2(models.Model):
     field_name_1 = models.CharField(max_length=10, null=True, blank=True)
-    
+
     class Meta:
         abstract = True
 
@@ -40,7 +40,7 @@ class BaseProfile(models.Model):
     mobile = models.CharField(max_length=64, null=True, blank=True)
     gender = models.PositiveSmallIntegerField(choices=GENDER_OPTS, default=0, verbose_name="Gender")
     dob = models.DateField(null=True, blank=True)
-    
+
     user_type = StatusField(choices_name='USER_TYPES', default=USER_TYPES.staff)
 
     created = models.DateTimeField(default=timezone.now, verbose_name="Joined On")
@@ -76,7 +76,7 @@ class BaseProfile(models.Model):
     def _create_user(self, *args, **kwargs):
         if not self.user:
             self.user = User.objects.create_user(
-                email=self.email, 
+                email=self.email,
                 password='abcd1234')
 
 
@@ -84,10 +84,21 @@ class Profile(Profile1, Profile2, BaseProfile):
     pass
 
 
+class Technology(models.Model):
+    name = models.CharField(max_length=64)
+    logo = models.FileField(upload_to='uploads/logos')
+    description = models.TextField(null=True, blank=True)
+
+    def __unicode__(self):
+        return self.name
+
+
 class Client(models.Model):
     title = models.CharField(max_length=100, unique=True)
     description = models.TextField()
-    image = models.ImageField( upload_to='uploads/clients' )
+    image = models.ImageField(upload_to='uploads/clients')
+    backend_technologies = models.ManyToManyField(Technology, related_name='backend_technologies')
+    frontend_technologies = models.ManyToManyField(Technology, related_name='frontend_technologies')
 
     def __unicode__(self):
         return '%s' % self.title

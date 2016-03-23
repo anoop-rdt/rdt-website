@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Profile, Profile1, Profile2, BaseProfile, Client
+from .models import Profile, Profile1, Profile2, BaseProfile, Client, Technology
 
 
 BASE_FIELDS = [f.name for f in BaseProfile._meta.fields]
@@ -33,7 +33,9 @@ class TrainerAdmin(admin.ModelAdmin):
     def get_queryset(self, request):
         return super(TrainerAdmin, self).get_queryset(request).filter(user_type='profile2')
 
+
 class ClientAdmin(admin.ModelAdmin):
     pass
 
 admin.site.register(Client, ClientAdmin)
+admin.site.register(Technology)
