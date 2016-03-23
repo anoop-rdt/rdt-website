@@ -9,4 +9,5 @@ router = routers.SimpleRouter()
 urlpatterns = patterns('',
     url(r'^profile/register/$', views.RegisterView.as_view(), name='register'),
     url(r'^api/', include(router.urls)),
+    url(r'^technology-profile/$', views.list_technologies, name='technology-profile')
 )
