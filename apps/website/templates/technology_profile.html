@@ -29,31 +29,39 @@
 
 
 {% block container %}
-<table class="table-bordered">
-        <th>Client</th>
-        <th>Backend Tehnologies</th>
-        <th>Frontend Technologies</th>
+
+<div class="innerbanner fullwidth left main_gradient text-center pdgTB60 fontsize35 white_text lato_bold"><span class="lato_light">Technology </span> Profile </div>
+<br>
+<br>
+
+<div class="container">
+<table class="table table">
+        <th class="table-header">Project</th>
+        <th class="table-header">Backend Tehnologies</th>
+        <th class="table-header">Frontend Technologies</th>
         {% for client in clients %}
         <tr>
-            <td>{{client.title}}</td>
+            <td class="projet-title">{{client.title}}</td>
             <td class="logo-list">
+                    <ul class="logo-display">
                 {% for tech in client.backend_technologies.all %}
-                    <ul class="list-group">
-                        <li class="logo-display"><img src="{{tech.logo.url}}"></li>
-                    </ul>
+                        <li><img src="{{tech.logo.url}}"></li>
                     {% endfor %}
+                    </ul>
             </td>
             <td class="logo-list">
+                    <ul class="logo-display">
                 {% for tech in client.frontend_technologies.all %}
-                    <ul class="list-group">
-                        <li class="logo-display"><img src="{{tech.logo.url}}"></li>
-                    </ul>
+                        <li><img src="{{tech.logo.url}}"></li>
                     {% endfor %}
+                    </ul>
             </td>
         </tr>
 
         {% endfor %}
 
 </table>
-
+</div>
+<br>
+<br>
 {% endblock %}

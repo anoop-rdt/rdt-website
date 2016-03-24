@@ -1122,9 +1122,23 @@ font-family: 'gt_walsheim_regular',"Helvetica Neue",Helvetica,sans-serif;
     padding: 15px 0;
 }
 
-.logo-display {
-	height: 50px;
-	width: 50px;
+.logo-display{
+	margin: 0;
+	padding: 0;
+}
+.logo-display li{
 	display: inline-block;
+	padding: 5px 15px 10px 0;
+}
+.logo-display img{
+	height: 40px;
     vertical-align: top;
+}
+.table-header{
+	font-family: 'lato';
+	font-size: 24px;
+}
+.projet-title{
+	font-family: 'lato';
+	font-size: 14px;
 }
