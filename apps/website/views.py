@@ -10,12 +10,16 @@ from apps.profiles.models import Client
 from django.http import JsonResponse
 
 
+
 class HomePage(generic.TemplateView):
     template_name = "home.html"
 
     def get_context_data(self, **kwargs):
         context = super(HomePage, self).get_context_data(**kwargs)
-        context['clients'] = Client.objects.all()
+        clients = list(Client.objects.all())
+        size = 3
+        clients = [clients[i:i+size] for i  in range(0, len(clients), size)]
+        context['client_list'] = clients
         return context
 
 
