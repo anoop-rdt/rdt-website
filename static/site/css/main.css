@@ -1137,5 +1137,5 @@ font-family: 'gt_walsheim_regular',"Helvetica Neue",Helvetica,sans-serif;
 }
 img.slider-image-size{
 	display: table-cell;
-    height: 162px;
+    max-height: 162px;
 }
