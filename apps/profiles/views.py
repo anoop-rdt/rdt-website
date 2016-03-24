@@ -23,5 +23,4 @@ class RegisterView(AbstractFormView):
 def list_technologies(request):
     clients = Client.objects.all()
     context = {'clients': clients}
-    # for client in
-    return render(request, 'client_table.html', context)
+    return render(request, 'technology_profile.html', context)

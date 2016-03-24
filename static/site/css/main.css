@@ -1121,3 +1121,10 @@ font-family: 'gt_walsheim_regular',"Helvetica Neue",Helvetica,sans-serif;
 .pdgTB15 {
     padding: 15px 0;
 }
+
+.logo-display {
+	height: 50px;
+	width: 50px;
+	display: inline-block;
+    vertical-align: top;
+}
