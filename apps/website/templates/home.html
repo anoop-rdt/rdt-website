@@ -175,9 +175,10 @@ Our
                 <!-- Carousel items -->
                     <div class="item {% if forloop.first %}active{% endif %}">
                         <div class="row">
+
                       {% for client in clients %}
                             <div class="col-sm-1"></div>
-                            <div class="col-sm-3">
+                            <div class="{% if request.is_mobile %}center-block{% endif %} col-sm-3">
                               <a>
                                 <img src="{{client.image.url}}" alt="Image" class="slider-image-size">
                               </a>
