@@ -65,6 +65,7 @@ MIDDLEWARE_CLASSES = (
     'apps.account.middleware.ProcessUserLayout',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'django.middleware.security.SecurityMiddleware',
+    'apps.website.middlewares.MobileDetectionMiddleware'
 )
 
 STATICFILES_FINDERS = (
@@ -131,13 +132,9 @@ GRAPPELLI_ADMIN_TITLE = 'RAWDATA'
 
 CKEDITOR_UPLOAD_PATH = 'content/ckeditor/'
 
-CONTACT_EMAIL = 'chacko@rawdatatech.com'
+CONTACT_EMAIL = 'anoop@rawdatatech.com'
 
 SITE_ID = 1
 
 DISQUS_API_KEY = 'QT3DmFEmSb1CGDhgPLZnzcTsjfOQ5MbMz3B9e9UIPlsik4QtcfElEDsKaRopZl7z'
 DISQUS_WEBSITE_SHORTNAME = 'rawdatatech'
-
-ADDTHIS_SETTINGS = {
-    'PUB_ID': "ra-56ed0750879d2b75",
-}
