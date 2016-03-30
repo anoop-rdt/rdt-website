@@ -50,29 +50,15 @@
 				<a class="a2a_button_linkedin"></a>
 			</div>
 			<div class="text-muted">{{ object.posted|date:"M d, Y" }}</div>
-			<!-- AddToAny BEGIN -->
-<!-- AddToAny END -->
-  		  </div>
-  		</div>
-	  	<div class="row">
-			  <div class="col-md-6 col-md-offset-3">
-		  		<div class="fullwidth pdgTB50 left">
-					<div class="font-17 justify blog-text">
-						{{ object.body|safe }}
-					</div>
+	  		<div class="fullwidth pdgTB50 left">
+	  			<img src={{ object.image.url}} width="100%">
+				<div class="font-17 justify blog-text">
+	  			<br>
+					{{ object.body|safe }}
 				</div>
-	    		<div id="disqus_thread"></div>
-			  </div>
-			<!-- <div class="col-lg-5">
-				<h1>Related Blogs</h1>
 			</div>
-			<div class="col-lg-5 ">
-			  <ul class="list-group">
-			  {% for blog in related_blogs %}
-				<li class="list-group-item"><a href="{% url 'blogs:blog_detail' blog.slug %}">{{blog.title}}</a></li>
-			  {% endfor %}
-			  </ul>
-			</div> -->
+			<div id="disqus_thread"></div>
+	  	  </div>
 		</div>
 	</div>
 {% endblock %}

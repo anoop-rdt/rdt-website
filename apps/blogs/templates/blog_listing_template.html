@@ -5,13 +5,14 @@
        <a class='div-click' href="{% url 'blogs:blog_detail' blog.slug %}" class="tag">{{category.title}}</a>
          <div class="panel-custom panel-default-custom">
            <div class="panel-heading-custom font-17">
-            {{ blog.title|truncatechars:75 }}
+            {{ blog.title|truncatechars:65 }}
             </div>
            <div class="image-div list-inner">
             <a href="#">
-             <img src={{ blog.image.url}} width="100%" class="center-block-custom">
+             <img src={{ blog.image.url}} width="100%">
             </a>
          </div>
+         <br>
          <div class="panel-body-custom">{{blog.body|safe|striptags|truncatechars:150}}</div>
          {% for category in blog.category.all %}
            <a href="#" class="tag">{{category.title}}</a>
