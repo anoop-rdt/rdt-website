@@ -1059,14 +1059,14 @@ font-family: 'gt_walsheim_regular',"Helvetica Neue",Helvetica,sans-serif;
     border-color: rgba(0,0,0,.2);
 }
 .panel-custom:hover {
-    box-shadow: 2px 2px 5px 2px #4f3e98;
+    box-shadow: 2px 2px 3px 0px rgba(0,0,0,.2);
 }
 .panel-custom {
     margin-bottom: 20px;
     background-color: #fff;
     border: 1px solid rgba(0,0,0,.15);
     border-radius: 1px;
-    box-shadow: 2px 2px 3px 0px rgba(0,0,0,.2);
+    box-shadow: 1px 1px 2px 0px rgba(0,0,0,.2);
 }
 .panel-body-custom{
 	    padding: 15px;
@@ -1140,4 +1140,7 @@ img.slider-image-size{
     max-height: 162px;
     margin-right: auto;
     margin-left: auto;
+}
+#footer{
+	display: none;
 }
