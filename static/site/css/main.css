@@ -1069,10 +1069,11 @@ font-family: 'gt_walsheim_regular',"Helvetica Neue",Helvetica,sans-serif;
     box-shadow: 1px 1px 2px 0px rgba(0,0,0,.2);
 }
 .panel-body-custom{
-	    padding: 15px;
+	padding: 15px;
     font-size: 15px;
     height: 100px;
     color: #555;
+    text-align: left;
 }
 .panel-heading-custom {
     border-bottom-color:transparent;
@@ -1083,8 +1084,8 @@ font-family: 'gt_walsheim_regular',"Helvetica Neue",Helvetica,sans-serif;
   color:#003236;
   font-size:18px;
   font-weight:600;
-  height:55px;
-  line-height:21px;
+  height:62px;
+  line-height:23px;
   padding:10px 15px;
   text-align:left;
 }
