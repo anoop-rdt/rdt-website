@@ -1161,3 +1161,4 @@ img.slider-image-size{
 .blog-list-height{
 	height:238px;
 }
+.blog-list-height > img {max-height: 238px;}
