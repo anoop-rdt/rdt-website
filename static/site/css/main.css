@@ -1076,18 +1076,13 @@ font-family: 'gt_walsheim_regular',"Helvetica Neue",Helvetica,sans-serif;
     text-align: left;
 }
 .panel-heading-custom {
-    border-bottom-color:transparent;
-  border-bottom-style:solid;
-  border-bottom-width:1px;
-  border-top-left-radius:3px;
-  border-top-right-radius:3px;
-  color:#003236;
-  font-size:18px;
-  font-weight:600;
-  height:62px;
-  line-height:23px;
-  padding:10px 15px;
-  text-align:left;
+color: #444;
+font-size: 18px;
+font-weight: 600;
+height: 73px;
+line-height: 24px;
+padding: 15px 15px;
+text-align: left;
 }
 .center-block-custom {
 	display: block;
@@ -1095,7 +1090,9 @@ font-family: 'gt_walsheim_regular',"Helvetica Neue",Helvetica,sans-serif;
 	margin-left: auto;
 	height: 220px;
 }
-.carousel-control 			 { width:  4%; }
+.carousel-control{
+ width:  4%; 
+}
 .carousel-control.left,.carousel-control.right {margin-left:15px;background-image:none;}
 @media (max-width: 767px) {
 	.carousel-inner .active.left { left: -100%; }
@@ -1160,4 +1157,7 @@ img.slider-image-size{
 .projet-title{
 	font-family: 'lato';
 	font-size: 14px;
+}
+.blog-list-height{
+	height:238px;
 }

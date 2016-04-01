@@ -7,13 +7,11 @@
            <div class="panel-heading-custom font-17">
             {{ blog.title|truncatechars:65 }}
             </div>
-           <div class="image-div list-inner">
-            <a href="#">
+           <div class="image-div list-inner blog-list-height">
              <img src={{ blog.image.url}} width="100%">
-            </a>
          </div>
-         <br>
          <div class="panel-body-custom">{{blog.body|safe|striptags|truncatechars:150}}</div>
+         <br>
          {% for category in blog.category.all %}
            <a href="#" class="tag">{{category.title}}</a>
          {% endfor %}
