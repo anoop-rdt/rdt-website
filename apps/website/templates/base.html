@@ -95,7 +95,6 @@
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-beta1/jquery.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-beta1/jquery.min.js"></script>
 <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-{% compress js %}
 <script type="text/javascript" src="{% static 'site/js/slider/velocity.min.js' %}"></script>
 <script type="text/javascript" src="{% static 'site/js/slider/velocity.ui.min.js' %}"></script>
 <script type="text/javascript" src="{% static 'site/js/slider/imagesloaded.min.js' %}"></script>
@@ -234,7 +233,6 @@ $(document).ready(function(e) {
   wow.init();
 });
 </script>
-{% endcompress %}
 
 {% block scripts %}
 {% endblock scripts %}

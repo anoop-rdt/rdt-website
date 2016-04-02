@@ -22,6 +22,8 @@ SECRET_KEY = 'n8f&s%8p_ul6qa#&n-3e8r*$71qq3y=8aqav0oevqklih1qh@d'
 
 TEMPLATE_DEBUG = True
 
+COMPRESS_ENABLED = True
+
 ALLOWED_HOSTS = ['*']
 
 # Application definition
@@ -132,7 +134,7 @@ GRAPPELLI_ADMIN_TITLE = 'RAWDATA'
 
 CKEDITOR_UPLOAD_PATH = 'content/ckeditor/'
 
-CONTACT_EMAIL = 'anoop@rawdatatech.com'
+CONTACT_EMAIL = 'chacko@rawdatatech.com'
 
 SITE_ID = 1
 
