@@ -1,26 +1,22 @@
 <!DOCTYPE HTML>
 <html lang="en">
 {% load staticfiles %}
+{% load compress %}
 <head>
   {% block meta_container %}
   {% endblock meta_container %}
 
   <meta name="keywords" content="Rawdata, Rawdata Technologies" />
   <meta name="description" content="RawData is a specialized custom software development company armed with the best engineers and strategists in the business." />
-
   <link href='https://fonts.googleapis.com/css?family=Lato:400,300,700' rel='stylesheet' type='text/css'>
-  <link rel="stylesheet" type="text/css" href="{% static 'site/css/bootstrap.min.css' %}">
-  <link rel="stylesheet" type="text/css" href="{% static 'site/css/main.css' %}">
-  <link rel="stylesheet" type="text/css" href="{% static 'site/css/font-awesome.min.css' %}">
-  <link rel="stylesheet" type="text/css" href="{% static 'site/css/animate.css' %}">
-  <link rel="stylesheet" type="text/css" href="{% static 'site/css/responsive.css' %}">
-  <link rel="stylesheet" type="text/css" href="{% static 'site/css/sangarSlider.css' %}">
-  <link rel="stylesheet" type="text/css" href="{% static 'site/css/sangarSliderdefault.css' %}">
-  <script type="text/javascript" src="{% static 'site/js/jquery.js' %}"></script>
-  <script type="text/javascript" src="{% static 'site/js/jquery-ui.min.js' %}"></script>
-  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-  <script type="text/javascript" src="{% static 'site/js/slider/velocity.min.js' %}"></script>
-  <script type="text/javascript" src="{% static 'site/js/slider/velocity.ui.min.js' %}"></script>
+  <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+{% compress css %}
+  <link rel="stylesheet" type="text/css" href="{% static 'site/css/main.css' %}" charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="{% static 'site/css/font-awesome.min.css' %}" charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="{% static 'site/css/animate.css' %}" charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="{% static 'site/css/responsive.css' %}" charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="{% static 'site/css/sangarSlider.css' %}" charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="{% static 'site/css/sangarSliderdefault.css' %}" charset="utf-8">
   <!--[if gte IE 9]>
     <style type="text/css">
       .main_gradient {
@@ -48,6 +44,7 @@
 <link rel="icon" type="image/png" sizes="32x32" href="{% static 'site/images/favicon2/favicon-32x32.png' %}">
 <link rel="icon" type="image/png" sizes="96x96" href="{% static 'site/images/favicon2/favicon-96x96.png' %}">
 <link rel="icon" type="image/png" sizes="16x16" href="{% static 'site/images/favicon2/favicon-16x16.png' %}">
+{% endcompress %}
 <link rel="manifest" href="{% static 'site/images/favicon2/manifest.json' %}">
 <meta name="msapplication-TileColor" content="#ffffff">
 <meta name="msapplication-TileImage" content="{% static 'site/images/favicon2/ms-icon-144x144.png' %}">
@@ -95,6 +92,12 @@
 <div class="copyrightwrp pdgTB20 text-center"> &copy; 2016 Rawdata Technologies Pvt. Ltd. All rights reserved.
 </div>
 
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-beta1/jquery.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-beta1/jquery.min.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+{% compress js %}
+<script type="text/javascript" src="{% static 'site/js/slider/velocity.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'site/js/slider/velocity.ui.min.js' %}"></script>
 <script type="text/javascript" src="{% static 'site/js/slider/imagesloaded.min.js' %}"></script>
 <script type="text/javascript" src="{% static 'site/js/slider/jquery.touchSwipe.min.js' %}"></script>
 <script type="text/javascript" src="{% static 'site/js/slider/sangarSlider.min.js' %}"></script>
@@ -231,6 +234,7 @@ $(document).ready(function(e) {
   wow.init();
 });
 </script>
+{% endcompress %}
 
 {% block scripts %}
 {% endblock scripts %}
