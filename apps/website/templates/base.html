@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html lang="en">
 {% load staticfiles %}
-{% load compress %}
+
 <head>
   {% block meta_container %}
   {% endblock meta_container %}
@@ -10,7 +10,6 @@
   <meta name="description" content="RawData is a specialized custom software development company armed with the best engineers and strategists in the business." />
   <link href='https://fonts.googleapis.com/css?family=Lato:400,300,700' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-{% compress css %}
   <link rel="stylesheet" type="text/css" href="{% static 'site/css/main.css' %}" charset="utf-8">
   <link rel="stylesheet" type="text/css" href="{% static 'site/css/font-awesome.min.css' %}" charset="utf-8">
   <link rel="stylesheet" type="text/css" href="{% static 'site/css/animate.css' %}" charset="utf-8">
@@ -44,7 +43,6 @@
 <link rel="icon" type="image/png" sizes="32x32" href="{% static 'site/images/favicon2/favicon-32x32.png' %}">
 <link rel="icon" type="image/png" sizes="96x96" href="{% static 'site/images/favicon2/favicon-96x96.png' %}">
 <link rel="icon" type="image/png" sizes="16x16" href="{% static 'site/images/favicon2/favicon-16x16.png' %}">
-{% endcompress %}
 <link rel="manifest" href="{% static 'site/images/favicon2/manifest.json' %}">
 <meta name="msapplication-TileColor" content="#ffffff">
 <meta name="msapplication-TileImage" content="{% static 'site/images/favicon2/ms-icon-144x144.png' %}">
