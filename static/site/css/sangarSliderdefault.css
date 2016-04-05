@@ -6,12 +6,12 @@
 }
 
 .sangar-slideshow-container > .default div > span.sangar-arrow-right {
-	background: url("images/right-arrow.png");
+	background: url();
 	right: 0px;	
 }
 
 .sangar-slideshow-container > .default div > span.sangar-arrow-left {
-	background: url("images/left-arrow.png");
+	background: url();
 	left: 0px;
 }
 

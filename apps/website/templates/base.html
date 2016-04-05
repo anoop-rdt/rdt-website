@@ -19,12 +19,6 @@
   <link rel="stylesheet" type="text/css" href="{% static 'site/css/sangarSlider.css' %}">
   <link rel="stylesheet" type="text/css" href="{% static 'site/css/sangarSliderdefault.css' %}">
   {% endcompress %}
-  {% compress js %}
-  <script type="text/javascript" src="{% static 'site/js/jquery.js' %}"></script>
-  <script type="text/javascript" src="{% static 'site/js/jquery-ui.min.js' %}">
-  </script>
-  {% endcompress %}
-  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
   <!--[if gte IE 9]>
     <style type="text/css">
       .main_gradient {
@@ -99,6 +93,12 @@
 <div class="clearfix"></div>
 <div class="copyrightwrp pdgTB20 text-center"> &copy; 2016 Rawdata Technologies Pvt. Ltd. All rights reserved.
 </div>
+{% compress js %}
+<script type="text/javascript" src="{% static 'site/js/jquery.js' %}"></script>
+<script type="text/javascript" src="{% static 'site/js/jquery-ui.min.js' %}">
+</script>
+{% endcompress %}
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 {% compress js %}
 <script type="text/javascript" src="{% static 'site/js/slider/imagesloaded.min.js' %}"></script>
 <script type="text/javascript" src="{% static 'site/js/slider/jquery.touchSwipe.min.js' %}"></script>
