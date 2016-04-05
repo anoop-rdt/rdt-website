@@ -1,6 +1,7 @@
 <!DOCTYPE HTML>
 <html lang="en">
 {% load staticfiles %}
+{% load compress %}
 <head>
   {% block meta_container %}
   {% endblock meta_container %}
@@ -9,6 +10,7 @@
   <meta name="description" content="RawData is a specialized custom software development company armed with the best engineers and strategists in the business." />
 
   <link href='https://fonts.googleapis.com/css?family=Lato:400,300,700' rel='stylesheet' type='text/css'>
+  {% compress css %}
   <link rel="stylesheet" type="text/css" href="{% static 'site/css/bootstrap.min.css' %}">
   <link rel="stylesheet" type="text/css" href="{% static 'site/css/main.css' %}">
   <link rel="stylesheet" type="text/css" href="{% static 'site/css/font-awesome.min.css' %}">
@@ -16,11 +18,13 @@
   <link rel="stylesheet" type="text/css" href="{% static 'site/css/responsive.css' %}">
   <link rel="stylesheet" type="text/css" href="{% static 'site/css/sangarSlider.css' %}">
   <link rel="stylesheet" type="text/css" href="{% static 'site/css/sangarSliderdefault.css' %}">
+  {% endcompress %}
+  {% compress js %}
   <script type="text/javascript" src="{% static 'site/js/jquery.js' %}"></script>
-  <script type="text/javascript" src="{% static 'site/js/jquery-ui.min.js' %}"></script>
+  <script type="text/javascript" src="{% static 'site/js/jquery-ui.min.js' %}">
+  </script>
+  {% endcompress %}
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-  <script type="text/javascript" src="{% static 'site/js/slider/velocity.min.js' %}"></script>
-  <script type="text/javascript" src="{% static 'site/js/slider/velocity.ui.min.js' %}"></script>
   <!--[if gte IE 9]>
     <style type="text/css">
       .main_gradient {
@@ -95,13 +99,16 @@
 <div class="clearfix"></div>
 <div class="copyrightwrp pdgTB20 text-center"> &copy; 2016 Rawdata Technologies Pvt. Ltd. All rights reserved.
 </div>
-
+{% compress js %}
 <script type="text/javascript" src="{% static 'site/js/slider/imagesloaded.min.js' %}"></script>
 <script type="text/javascript" src="{% static 'site/js/slider/jquery.touchSwipe.min.js' %}"></script>
 <script type="text/javascript" src="{% static 'site/js/slider/sangarSlider.min.js' %}"></script>
 
 <script type="text/javascript" src="{% static 'site/js/jquery.nicescroll.min.js' %}"></script>
- 
+<script type="text/javascript" src="{% static 'site/js/wow.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'site/js/slider/velocity.min.js' %}"></script>
+  <script type="text/javascript" src="{% static 'site/js/slider/velocity.ui.min.js' %}"></script>
+{% endcompress %}
 <script type="text/javascript">
 $(document).ready(function(e) {
   $(".vilotbg .deatilswhowein").niceScroll({
@@ -219,7 +226,6 @@ return false;
 </script>
 
 
-<script type="text/javascript" src="{% static 'site/js/wow.min.js' %}"></script>
 <script type="text/javascript">
 $(document).ready(function(e) {
     wow = new WOW(

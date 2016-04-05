@@ -22,6 +22,8 @@ SECRET_KEY = 'n8f&s%8p_ul6qa#&n-3e8r*$71qq3y=8aqav0oevqklih1qh@d'
 
 TEMPLATE_DEBUG = True
 
+COMPRESS_ENABLED = True
+
 ALLOWED_HOSTS = ['*']
 
 # Application definition
