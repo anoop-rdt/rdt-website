@@ -95,6 +95,7 @@ class Technology(models.Model):
 
 class Client(models.Model):
     title = models.CharField(max_length=100, unique=True)
+    url = models.URLField(max_length=100)
     description = models.TextField()
     image = models.ImageField(upload_to='uploads/clients')
     backend_technologies = models.ManyToManyField(Technology, related_name='backend_technologies')

@@ -1138,6 +1138,7 @@ img.slider-image-size{
     max-height: 162px;
     margin-right: auto;
     margin-left: auto;
+    padding-top: 50px;
 }
 #footer{
 	display: none;
@@ -1162,3 +1163,22 @@ img.slider-image-size{
 	height:238px;
 }
 .blog-list-height > img {max-height: 238px;}
+.caption{
+	display:none;
+	position:absolute;
+	top:0;
+	left:5.5%;
+	right:2%;
+	bottom:0;
+	background:rgba(0, 0, 0, 0.65);
+	color:#fff !important;
+	margin-top:0;
+	z-index:1000;
+	padding-left:2%;
+	padding-right:2%;
+	text-align:center;
+}
+
+.caption p{
+	padding:2%;
+}

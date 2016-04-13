@@ -166,7 +166,6 @@ Rawdata continues to challenge its potential and undertake complex projects. Our
 Our 
 <span class="lato_light comhedspanmidle">Customers</span>
 </h3>
-<br/>
 <div class="container">
     <div class="col-md-12">
             <div id="myCarousel" class="carousel slide">
@@ -179,7 +178,10 @@ Our
                       {% for client in clients %}
                             <div class="col-sm-1"></div>
                             <div class="{% if request.is_mobile %}center-block{% endif %} col-sm-3">
-                              <a>
+                              <div class="caption">
+                                <p>{{client.description}}</p>
+                              </div>
+                              <a href='{{client.url}}' target="_blank">
                                 <img src="{{client.image.url}}" alt="{{client.title}}" class="slider-image-size">
                               </a>
                             </div>
