@@ -1,7 +1,5 @@
 from django import forms
 from django.contrib import admin
-from djangoseo.admin import register_seo_admin
-from seo import RawdataMetadata
 
 from ckeditor.widgets import CKEditorWidget
 
@@ -28,4 +26,3 @@ class CategoryAdmin(admin.ModelAdmin):
 
 admin.site.register(Blog, BlogAdmin)
 admin.site.register(Category, CategoryAdmin)
-register_seo_admin(admin.site, RawdataMetadata)
